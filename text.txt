@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mode Village — Shop in Style</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons (simple SVG sprite inline for reliability) -->
+  <meta name="theme-color" content="#FF4E88" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="your-logo.png" alt="Mode Village logo" class="brand-logo" />
+        <div>
+          <h1 class="brand-title">Mode Village</h1>
+          <p class="brand-sub">Style for every moment</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="search-toggle" class="icon-btn" aria-label="Open search">🔍</button>
+        <button id="cart-toggle" class="icon-btn" aria-label="Open cart">🛒 <span id="cart-count" class="cart-count">0</span></button>
+        <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="#shop" class="nav-link">Shop</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Discover the latest in fashion — welcome to Mode Village</h2>
+      <p>Curated looks, effortless shopping. New collections drop weekly.</p>
+      <a href="#shop" class="cta-btn">Shop Featured</a>
+    </div>
+  </section>
+
+  <!-- SEARCH + FILTERS -->
+  <section class="controls" id="shop">
+    <div class="controls-row">
+      <div class="search-box">
+        <input id="search-input" type="search" placeholder="Search products, e.g. 'jacket'..." aria-label="Search products" />
+      </div>
+
+      <div class="filters">
+        <select id="category-filter" aria-label="Filter by category">
+          <option value="all">All categories</option>
+        </select>
+
+        <select id="sort-select" aria-label="Sort products">
+          <option value="popular">Sort: Popular</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="newest">Newest</option>
+        </select>
+
+        <div class="price-range">
+          <label for="min-price">Min</label>
+          <input id="min-price" type="number" min="0" step="1" placeholder="0" />
+          <label for="max-price">Max</label>
+          <input id="max-price" type="number" min="0" step="1" placeholder="500" />
+          <button id="price-filter-btn" class="small-btn">Apply</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+    <h3 class="section-title">Featured Products</h3>
+    <div id="product-grid" class="product-grid" aria-live="polite"></div>
+
+    <div id="no-results" class="no-results" hidden>
+      <p>No products match your filters. Try clearing search or filters.</p>
+      <button id="clear-filters" class="small-btn">Clear Filters</button>
+    </div>
+  </section>
+
+  <!-- CART PANEL -->
+  <aside id="cart-panel" class="panel cart-panel" aria-hidden="true">
+    <header class="panel-header">
+      <h4>Your Cart</h4>
+      <button id="close-cart" class="icon-btn" aria-label="Close cart">✕</button>
+    </header>
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Items</span>
+        <span id="summary-count">0</span>
+      </div>
+      <div class="summary-row">
+        <strong>Total</strong>
+        <strong id="summary-total">£0.00</strong>
+      </div>
+
+      <button id="checkout-btn" class="cta-btn full-width" disabled>Proceed to Checkout</button>
+      <button id="clear-cart" class="small-btn full-width">Clear Cart</button>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT PANEL -->
+  <aside id="checkout-panel" class="panel checkout-panel" aria-hidden="true">
+    <header class="panel-header">
+      <h4>Checkout</h4>
+      <button id="close-checkout" class="icon-btn" aria-label="Close checkout">✕</button>
+    </header>
+
+    <form id="checkout-form" class="checkout-form" novalidate>
+      <div class="form-row">
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="name" required />
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="form-row">
+        <label for="address">Address</label>
+        <input id="address" name="address" required />
+      </div>
+
+      <div class="form-row">
+        <label for="card">Card (mock)</label>
+        <input id="card" name="card" placeholder="4242 4242 4242 4242" required />
+        <small class="muted">This is a demo. No real payments processed.</small>
+      </div>
+
+      <div class="order-summary">
+        <h5>Order Summary</h5>
+        <div id="order-items"></div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="checkout-subtotal">£0.00</span>
+        </div>
+      </div>
+
+      <button type="submit" class="cta-btn full-width">Place Order</button>
+      <button type="button" id="back-to-cart" class="small-btn full-width">Back to Cart</button>
+    </form>
+  </aside>
+
+  <!-- ORDER CONFIRMATION (modal) -->
+  <div id="order-confirm" class="modal" hidden>
+    <div class="modal-inner">
+      <h4>Thank you!</h4>
+      <p>Your order has been placed. A confirmation was sent to the provided email (demo).</p>
+      <div id="order-receipt"></div>
+      <button id="close-receipt" class="cta-btn">Close</button>
+    </div>
+  </div>
+
+  <!-- ABOUT & FOOTER -->
+  <section class="about" id="about">
+    <h3>About Mode Village</h3>
+    <p>Mode Village curates trend-forward fashion with sustainability and accessibility in mind. Explore new collections and find pieces that speak to you.</p>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Mode Village</strong><br/>
+        support@modevillage.com
+      </div>
+      <div>
+        <small>© <span id="year"></span> Mode Village. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>

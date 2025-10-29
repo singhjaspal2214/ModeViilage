@@ -1,12 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ModeVillage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ModeVillage — Where Passion Meets Fashion</title>
+  <meta name="theme-color" content="#FF6A5A">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to ModeVillage!</h1>
-  <p>If you can see this, your site is live 🎉</p>
+  <div class="container">
+    <header class="header fade-up" style="animation-delay:.05s">
+      <div class="brand">
+        <img src="logo.png" alt="ModeVillage logo">
+      </div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="icon-btn">🛒</button>
+      </nav>
+    </header>
+
+    <section class="hero fade-up" style="animation-delay:.12s">
+      <div class="hero-inner">
+        <h1>Where Passion Meets Fashion</h1>
+        <p>Curated collections, effortless shopping — ModeVillage brings modern luxury to your wardrobe.</p>
+        <p style="margin-top:18px">
+          <a href="https://www.modevillage.com" class="cta">Shop Now</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="shop" class="collections container">
+      <div class="col-card fade-up" style="animation-delay:.18s">
+        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=60" alt="Women's collection">
+        <div>
+          <h3>Women</h3>
+          <p>Latest dresses, tops and curated fashion for her.</p>
+        </div>
+      </div>
+
+      <div class="col-card fade-up" style="animation-delay:.24s">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=60" alt="Men's collection">
+        <div>
+          <h3>Men</h3>
+          <p>Contemporary menswear from casual to formal.</p>
+        </div>
+      </div>
+
+      <div class="col-card fade-up" style="animation-delay:.30s">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55f7b?auto=format&fit=crop&w=800&q=60" alt="Accessories">
+        <div>
+          <h3>Accessories</h3>
+          <p>Handbags, sunglasses and must-have extras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about fade-up" style="animation-delay:.36s">
+      <h2>About ModeVillage</h2>
+      <p style="color:var(--muted)">ModeVillage curates trend-forward fashion with a focus on quality and style. Shop unique selections, discover new collections, and express your personality through clothing.</p>
+    </section>
+
+    <footer id="contact" class="footer fade-up" style="animation-delay:.42s">
+      <p>Follow us on <strong>Instagram</strong> | <strong>Facebook</strong></p>
+      <p>Contact: <a href="mailto:support@modevillage.com" style="color:inherit">support@modevillage.com</a></p>
+      <p>© 2025 ModeVillage. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple fade-up on load
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.fade-up').forEach(function(el){
+        // nothing more needed, CSS animation plays
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,82 +1,223 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ModeVillage — Where Passion Meets Fashion</title>
-  <meta name="theme-color" content="#FF6A5A">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ModeVillage — Trendy Glam</title>
+<meta name="theme-color" content="#FF6A5A">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header fade-up" style="animation-delay:.05s">
-      <div class="brand">
-        <img src="logo.png" alt="ModeVillage logo">
-      </div>
-      <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <button class="icon-btn">🛒</button>
-      </nav>
-    </header>
-
-    <section class="hero fade-up" style="animation-delay:.12s">
-      <div class="hero-inner">
-        <h1>Where Passion Meets Fashion</h1>
-        <p>Curated collections, effortless shopping — ModeVillage brings modern luxury to your wardrobe.</p>
-        <p style="margin-top:18px">
-          <a href="https://www.modevillage.com" class="cta">Shop Now</a>
-        </p>
-      </div>
-    </section>
-
-    <section id="shop" class="collections container">
-      <div class="col-card fade-up" style="animation-delay:.18s">
-        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=60" alt="Women's collection">
-        <div>
-          <h3>Women</h3>
-          <p>Latest dresses, tops and curated fashion for her.</p>
-        </div>
-      </div>
-
-      <div class="col-card fade-up" style="animation-delay:.24s">
-        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=60" alt="Men's collection">
-        <div>
-          <h3>Men</h3>
-          <p>Contemporary menswear from casual to formal.</p>
-        </div>
-      </div>
-
-      <div class="col-card fade-up" style="animation-delay:.30s">
-        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55f7b?auto=format&fit=crop&w=800&q=60" alt="Accessories">
-        <div>
-          <h3>Accessories</h3>
-          <p>Handbags, sunglasses and must-have extras.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about fade-up" style="animation-delay:.36s">
-      <h2>About ModeVillage</h2>
-      <p style="color:var(--muted)">ModeVillage curates trend-forward fashion with a focus on quality and style. Shop unique selections, discover new collections, and express your personality through clothing.</p>
-    </section>
-
-    <footer id="contact" class="footer fade-up" style="animation-delay:.42s">
-      <p>Follow us on <strong>Instagram</strong> | <strong>Facebook</strong></p>
-      <p>Contact: <a href="mailto:support@modevillage.com" style="color:inherit">support@modevillage.com</a></p>
-      <p>© 2025 ModeVillage. All rights reserved.</p>
-    </footer>
+<header class="top">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="logo.png" alt="ModeVillage logo">
+    </div>
+    <div class="search">
+      <input placeholder="Search for brands, products..." aria-label="Search">
+    </div>
+    <div class="icons">
+      <button class="icon-btn" title="Wishlist">♡</button>
+      <button class="icon-btn" title="Cart">🛒</button>
+      <button class="icon-btn" title="Profile">👤</button>
+    </div>
   </div>
+</header>
 
-  <script>
-    // Simple fade-up on load
-    document.addEventListener('DOMContentLoaded', function(){
-      document.querySelectorAll('.fade-up').forEach(function(el){
-        // nothing more needed, CSS animation plays
-      });
-    });
-  </script>
+<main class="container">
+  <section class="hero" aria-hidden="false">
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1541233349642-6e425fe6190e?auto=format&fit=crop&w=1600&q=80')">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>New Season Trends</h1>
+          <p>Discover the freshest looks curated just for you</p>
+          <a class="cta" href="https://www.modevillage.com" style="background:#FF6A5A;padding:12px 18px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1600&q=80')">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Luxury Collections</h1>
+          <p>Handpicked styles for a refined wardrobe</p>
+          <a class="cta" href="https://www.modevillage.com">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1600&q=80')">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Festive Sale — Up to 50% Off</h1>
+          <p>Celebrate the season with exclusive discounts</p>
+          <a class="cta" href="https://www.modevillage.com">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories" aria-label="Collections">
+    <div class="cat" onclick="location.href='#shop'">
+      <img src="https://images.unsplash.com/photo-1520975698510-8f5b9ae6d2d1?auto=format&fit=crop&w=800&q=70" alt="Women">
+      <div>
+        <h3>Women</h3>
+        <p>New arrivals & trending styles</p>
+      </div>
+    </div>
+
+    <div class="cat" onclick="location.href='#shop'">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=70" alt="Men">
+      <div>
+        <h3>Men</h3>
+        <p>Contemporary menswear</p>
+      </div>
+    </div>
+
+    <div class="cat" onclick="location.href='#shop'">
+      <img src="https://images.unsplash.com/photo-1526178618655-9f8a0d1d3b3f?auto=format&fit=crop&w=800&q=70" alt="Accessories">
+      <div>
+        <h3>Accessories</h3>
+        <p>Bags, sunglasses & more</p>
+      </div>
+    </div>
+
+    <div class="cat" onclick="location.href='#shop'">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=70" alt="Sale">
+      <div>
+        <h3>Sale</h3>
+        <p>Limited time offers</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="products">
+    <h2 style="margin:12px 0 8px;font-family:'Playfair Display',serif">Featured Products</h2>
+    <div class="products-grid">
+
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=80" alt="Product 1">
+        <div class="prod-info">
+          <div class="prod-title">Product 1 — Stylish Piece</div>
+          <div class="prod-price">£50.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1520975698510-8f5b9ae6d2d1?auto=format&fit=crop&w=1000&q=80" alt="Product 2">
+        <div class="prod-info">
+          <div class="prod-title">Product 2 — Stylish Piece</div>
+          <div class="prod-price">£51.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=1000&q=80" alt="Product 3">
+        <div class="prod-info">
+          <div class="prod-title">Product 3 — Stylish Piece</div>
+          <div class="prod-price">£52.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55f7b?auto=format&fit=crop&w=1000&q=80" alt="Product 4">
+        <div class="prod-info">
+          <div class="prod-title">Product 4 — Stylish Piece</div>
+          <div class="prod-price">£53.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1000&q=80" alt="Product 5">
+        <div class="prod-info">
+          <div class="prod-title">Product 5 — Stylish Piece</div>
+          <div class="prod-price">£54.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15f1c1a6c?auto=format&fit=crop&w=1000&q=80" alt="Product 6">
+        <div class="prod-info">
+          <div class="prod-title">Product 6 — Stylish Piece</div>
+          <div class="prod-price">£55.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1520962910789-5d3c6f8b1b5f?auto=format&fit=crop&w=1000&q=80" alt="Product 7">
+        <div class="prod-info">
+          <div class="prod-title">Product 7 — Stylish Piece</div>
+          <div class="prod-price">£56.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1535909339361-0f1f7a2f4a6f?auto=format&fit=crop&w=1000&q=80" alt="Product 8">
+        <div class="prod-info">
+          <div class="prod-title">Product 8 — Stylish Piece</div>
+          <div class="prod-price">£57.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1000&q=80" alt="Product 9">
+        <div class="prod-info">
+          <div class="prod-title">Product 9 — Stylish Piece</div>
+          <div class="prod-price">£58.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1520975608340-6f24ad8b3e5d?auto=format&fit=crop&w=1000&q=80" alt="Product 10">
+        <div class="prod-info">
+          <div class="prod-title">Product 10 — Stylish Piece</div>
+          <div class="prod-price">£59.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1000&q=80" alt="Product 11">
+        <div class="prod-info">
+          <div class="prod-title">Product 11 — Stylish Piece</div>
+          <div class="prod-price">£60.00</div>
+        </div>
+      </article>
+    
+      <article class="product">
+        <button class="wishlist" aria-label="Add to wishlist">♡</button>
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80" alt="Product 12">
+        <div class="prod-info">
+          <div class="prod-title">Product 12 — Stylish Piece</div>
+          <div class="prod-price">£61.00</div>
+        </div>
+      </article>
+    
+    </div>
+  </section>
+
+  <section class="about" aria-label="About">
+    <h2 style="font-family:'Playfair Display',serif">About ModeVillage</h2>
+    <p style="color:#6b6b6b;max-width:720px">ModeVillage is a curated destination for trend-forward fashion. We combine contemporary style with premium quality — designed for those who love to make a statement.</p>
+  </section>
+
+  <footer class="footer">
+    <p>Follow us: Instagram • Pinterest • TikTok</p>
+    <p>Contact: support@modevillage.com</p>
+    <p>© 2025 ModeVillage. All rights reserved.</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

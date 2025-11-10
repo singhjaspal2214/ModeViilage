@@ -1,0 +1,16 @@
+{
+  "name": "ModeVillage",
+  "short_name": "ModeVillage",
+  "description": "Where trend meets luxury. Curated fashion for him & her.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#800020",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
